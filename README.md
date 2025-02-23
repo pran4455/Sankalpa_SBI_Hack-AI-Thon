@@ -1,10 +1,12 @@
-#Sankalpa
+# Sankalpa
 
-Video Demonstration
+## Video Demonstration
 
 [![Watch the video](https://drive.google.com/uc?id=14aS1tchu5qV17BkNudcNLdHpoQCwQ0FO)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
 
-1. Unified Personalization Platform: Life360  
+# Description
+
+## 1. Unified Personalization Platform: Life360  
 Concept: AI-powered personalization platform for SBI Life, enhancing omnichannel engagement and real-time analytics.  
 Key Features: 
 - Dynamic persona refinement through AI-driven clustering for real-time customer profiling.  
@@ -12,7 +14,7 @@ Key Features:
 - AI-powered dynamic policy recommendations based on life stages.  
 Impact: Transforms SBI Life into a financial advisor, boosting loyalty and engagement.  
 
-2. AI-Powered Communication: TalkSmart  
+## 2. AI-Powered Communication: TalkSmart  
 Concept: AI-driven messaging to enhance customer retention.  
 Key Features:
 - Sentiment-driven outreach, analyzing past interactions for empathetic messaging.  
@@ -20,7 +22,7 @@ Key Features:
 - Conversational AI with seamless human escalation.  
 Impact: Builds trust, prevents churn, and improves satisfaction.  
 
- 3. Loyalty & Retention Engine: Reward+ Life  
+## 3. Loyalty & Retention Engine: Reward+ Life  
 Concept: Gamified loyalty platform for engagement and policy renewals.  
 Key Features:
 - Wellness rewards offering incentives for healthy lifestyles, including lower premiums and cashback.  
@@ -28,7 +30,7 @@ Key Features:
 - Community engagement through referral bonuses and customer forums.  
 Impact: Reinforces positive behaviors and enhances customer retention.  
 
- 4. Real-Time Analytics Dashboard: InsureInsights  Concept: AI-powered analytics for customer insights and campaign optimization.  
+## 4. Real-Time Analytics Dashboard: InsureInsights  Concept: AI-powered analytics for customer insights and campaign optimization.  
 Key Features:
 - Predictive analytics to forecast customer needs and churn risks.  
 - AI-driven campaign optimization for improved ROI.  
