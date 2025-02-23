@@ -1,4 +1,12 @@
-1. Unified Personalization Platform: Life360  
+# Sankalpa
+
+## Video Demonstration
+
+[![Watch the video](https://images.squarespace-cdn.com/content/v1/5dc36d89693877010cf639bc/1576368485444-8C28J2IJ37VIVUC7HB7P/8364741_orig-1024x437.jpg?format=2500w)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
+
+# Description
+
+## 1. Unified Personalization Platform: Life360  
 Concept: AI-powered personalization platform for SBI Life, enhancing omnichannel engagement and real-time analytics.  
 Key Features: 
 - Dynamic persona refinement through AI-driven clustering for real-time customer profiling.  
@@ -6,7 +14,7 @@ Key Features:
 - AI-powered dynamic policy recommendations based on life stages.  
 Impact: Transforms SBI Life into a financial advisor, boosting loyalty and engagement.  
 
-2. AI-Powered Communication: TalkSmart  
+## 2. AI-Powered Communication: TalkSmart  
 Concept: AI-driven messaging to enhance customer retention.  
 Key Features:
 - Sentiment-driven outreach, analyzing past interactions for empathetic messaging.  
@@ -14,7 +22,7 @@ Key Features:
 - Conversational AI with seamless human escalation.  
 Impact: Builds trust, prevents churn, and improves satisfaction.  
 
- 3. Loyalty & Retention Engine: Reward+ Life  
+## 3. Loyalty & Retention Engine: Reward+ Life  
 Concept: Gamified loyalty platform for engagement and policy renewals.  
 Key Features:
 - Wellness rewards offering incentives for healthy lifestyles, including lower premiums and cashback.  
@@ -22,13 +30,13 @@ Key Features:
 - Community engagement through referral bonuses and customer forums.  
 Impact: Reinforces positive behaviors and enhances customer retention.  
 
- 4. Real-Time Analytics Dashboard: InsureInsights  Concept: AI-powered analytics for customer insights and campaign optimization.  
+## 4. Real-Time Analytics Dashboard: InsureInsights  Concept: AI-powered analytics for customer insights and campaign optimization.  
 Key Features:
 - Predictive analytics to forecast customer needs and churn risks.  
 - AI-driven campaign optimization for improved ROI.  
 Impact: Enhances decision-making and boosts efficiency.  
 
-5. AI-Driven Marketing & Upselling: SmartEngage AI (Unified Solution: SmartMarketer AI + SellSmart)  
+## 5. AI-Driven Marketing & Upselling: SmartEngage AI (Unified Solution: SmartMarketer AI + SellSmart)  
 Concept: AI-driven marketing and upselling for revenue growth.  
 Key Features: 
 - Predictive remarketing to 
@@ -36,7 +44,7 @@ Key Features:
 - Interactive financial tools for goal tracking, policy simulations, and expense categorization.  
 Impact: Maximizes customer engagement, conversions, and satisfaction.  
 
-6. Data Quality & Ethical AI: TrustAI  
+## 6. Data Quality & Ethical AI: TrustAI  
 Concept: Ensuring reliable, ethical AI-driven decision-making.  
 Key Features: 
 - Data validation pipeline automating data cleansing and anomaly detection.  
@@ -44,7 +52,7 @@ Key Features:
 - Ethical AI toolkit with explainable AI (XAI) and privacy safeguards.  
 Impact: Increases trust, compliance, and AI performance.  
 
-7. Fraud Detection & Prevention  
+## 7. Fraud Detection & Prevention  
 Concept: AI-driven fraud detection for enhanced security.  
 Key Features:
 - Anomaly detection to identify suspicious claims and policy activities.  
