@@ -4,9 +4,187 @@ import numpy as np
 import joblib
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from flask import Flask, render_template, request, jsonify
-import model  # Importing the ML model logic
+import model
+import sqlite3
 
 app = Flask(__name__)
+def add_column_if_missing():
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+
+    # Check if 'selected_policy' column exists
+    cursor.execute("PRAGMA table_info(users)")
+    columns = [column[1] for column in cursor.fetchall()]
+
+    # If the column doesn't exist, add it
+    if 'selected_policy' not in columns:
+        cursor.execute("""
+            ALTER TABLE users ADD COLUMN selected_policy TEXT DEFAULT NULL
+        """)
+        conn.commit()
+
+    conn.close()
+
+# Call the function to add the column if missing
+add_column_if_missing()
+
+# Database Initialization
+def init_db():
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+
+    # Create users table if it doesn't exist
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE,
+            points INTEGER DEFAULT 0,
+            referrals INTEGER DEFAULT 0,
+            policy_fit_score INTEGER DEFAULT 50,
+            user_tier TEXT DEFAULT 'Bronze',
+            selected_policy TEXT DEFAULT NULL
+        )
+    """)
+
+    # Create rewards table if it doesn't exist
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS rewards (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            points_required INTEGER
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
+# Load policy data from the Excel file
+def load_policy_data():
+    file_path = r'sbilife.xlsx'
+    df = pd.read_excel(file_path)
+    policies = df.to_dict(orient='records')  # Convert to list of dictionaries
+    return policies
+
+# Route for Home Page
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+# Route for Leaderboard Page
+@app.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html')
+
+# Route for Referrals Page
+@app.route('/referrals')
+def referrals():
+    return render_template('referrals.html')
+
+# Route for Store Page
+@app.route('/store')
+def store():
+    user_info_response = get_user_info()  # Get the current user info
+    user_info = user_info_response.get_json()
+    return render_template('reward_store.html', points=user_info['points'], user_tier=user_info['user_tier'])
+
+@app.route('/policy_score')
+def policy_score():
+    user_id = 1
+    
+    # Fetch the user's policy fit score
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT policy_fit_score FROM users WHERE id = ?", (user_id,))
+    score = cursor.fetchone()
+    conn.close()
+
+    # Print the score to check if it's being retrieved
+    print("User's Policy Fit Score:", score)
+
+    # Fetch available policies
+    policies = load_policy_data()
+
+    # Print policies data
+    print("Available Policies:", policies)
+    
+    return render_template('policy_score.html', policy_fit_score=score[0] if score else 50, policies=policies)
+
+
+# Save the selected policy
+@app.route('/api/save_policy', methods=['POST'])
+def save_policy():
+    data = request.get_json()
+    policy_name = data.get('policy_name')
+    user_id = 1  # Replace with dynamic user ID (e.g., from session)
+
+    if policy_name:
+        # Update the user's selected policy in the database
+        conn = sqlite3.connect("reward_life.db")
+        cursor = conn.cursor()
+        cursor.execute("UPDATE users SET selected_policy = ? WHERE id = ?", (policy_name, user_id))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"message": "Policy saved successfully!"})
+    else:
+        return jsonify({"message": "Error: No policy selected!"}), 400
+
+# Fetch Leaderboard Data
+@app.route('/api/leaderboard', methods=['GET'])
+def get_leaderboard():
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, points FROM users ORDER BY points DESC LIMIT 10")
+    users = cursor.fetchall()
+    conn.close()
+    return jsonify(users)
+
+@app.route('/api/user_info', methods=['GET'])
+def get_user_info():
+    user_info = get_user_data(1)  # Example user ID
+    return jsonify(user_info)
+
+def get_user_data(user_id):
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT points, user_tier FROM users WHERE id = ?", (user_id,))
+    result = cursor.fetchone()
+    conn.close()
+    return {"points": result[0], "user_tier": result[1]}
+
+# Fetch Rewards Based on Points
+@app.route('/api/rewards', methods=['GET'])
+def get_rewards():
+    points = int(request.args.get("points", 0))
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, name, points_required FROM rewards WHERE points_required <= ?", (points,))
+    rewards = cursor.fetchall()
+    conn.close()
+
+    return jsonify([{"id": reward[0], "name": reward[1], "pointsRequired": reward[2]} for reward in rewards])
+
+# Redeem Reward
+@app.route('/api/redeem_reward', methods=['POST'])
+def redeem_reward():
+    data = request.json
+    reward_id = data.get("reward_id")
+
+    conn = sqlite3.connect("reward_life.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT points_required FROM rewards WHERE id = ?", (reward_id,))
+    reward = cursor.fetchone()
+
+    if reward:
+        reward_cost = reward[0]
+        cursor.execute("UPDATE users SET points = points - ? WHERE id = 1", (reward_cost,))
+        conn.commit()
+        conn.close()
+        return jsonify({"message": "Reward redeemed successfully!"})
+    else:
+        conn.close()
+        return jsonify({"message": "Invalid reward."}), 400
 
 # Load saved model, scaler, and label encoders
 model = joblib.load('voting_classifier_model.pkl')
@@ -214,3 +392,7 @@ def categorize():
         return jsonify({"category": category})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
+
+if __name__ == '__main__':
+    app.run(debug=True)

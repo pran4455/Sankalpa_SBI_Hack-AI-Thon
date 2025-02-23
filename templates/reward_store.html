@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reward Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css') }}">
+</head>
+<body>
+    <div class="reward-container">
+        <header>
+            <h1>Reward Store</h1>
+            <p>Your personalized rewards</p>
+        </header>
+        
+        <section class="reward-info">
+            <h2>Your Points: <span id="user-points">{{ points }}</span></h2>
+            <h3>Your Tier: <span id="user-tier">{{ user_tier }}</span></h3>
+        </section>
+        
+        <section class="reward-items">
+            <h2>Available Rewards</h2>
+            <ul id="reward-list">
+                <!-- Reward items will be dynamically loaded here -->
+            </ul>
+        </section>
+
+        <!-- Section to show and select policies -->
+        <section class="policy-selection">
+            <h2>Choose Your Policy</h2>
+            <form id="policy-form">
+                {% for policy in policies %}
+                    <div>
+                        <input type="radio" id="{{ policy['name'] }}" name="policy" value="{{ policy['name'] }}" 
+                            {% if policy['name'] == selected_policy %}checked{% endif %}>
+                        <label for="{{ policy['name'] }}">{{ policy['name'] }}</label>
+                    </div>
+                {% endfor %}
+                <br>
+                <button type="submit">Save Policy</button>
+            </form>
+            <p>Your selected policy: <span id="selected-policy">{{ selected_policy or 'None' }}</span></p>
+        </section>
+
+        <footer>
+            <button onclick="window.location.href='/leaderboard'">View Leaderboard</button>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/rewardStore.js') }}"></script>
+
+    <script>
+        document.getElementById('policy-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedPolicy = document.querySelector('input[name="policy"]:checked').value;
+
+            fetch('/api/save_policy', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ policy_name: selectedPolicy })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message === 'Policy saved successfully!') {
+                    document.getElementById('selected-policy').textContent = selectedPolicy;
+                }
+                alert(data.message);
+            });
+        });
+    </script>
+</body>
+</html>

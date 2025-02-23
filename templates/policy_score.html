@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Score</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/policy_score.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Render the Policy Fit Score -->
+        <h3>Your Policy Fit Score: {{ policy_fit_score }}</h3>
+
+        <!-- Render the Available Policies in a form -->
+        <h4>Available Policies:</h4>
+        <form method="POST" action="/save_policy">
+            <ul>
+                {% for policy in policies %}
+                    <li>
+                        <input type="checkbox" name="selected_policies" value="{{ policy['Policies'] }}" id="policy_{{ loop.index }}">
+                        <label for="policy_{{ loop.index }}">{{ policy['Policies'] }}</label>
+                        <p>{{ policy['Desc'] }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <!-- Submit Button to Save Selected Policies -->
+            <button type="submit">Save Selected Policies</button>
+        </form>
+    </div>
+</body>
+</html>

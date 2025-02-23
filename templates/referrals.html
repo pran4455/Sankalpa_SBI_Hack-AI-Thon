@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referrals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+</head>
+<body>
+    <div class="referrals-container">
+        <header>
+            <h1>Referrals & Community Rewards</h1>
+            <p>Invite friends and earn rewards!</p>
+        </header>
+        <section class="referral-list">
+            <h2>Your Referrals</h2>
+            <ul id="referral-list">
+                <!-- Dynamic list of referrals -->
+            </ul>
+        </section>
+        <section class="referral-action">
+            <h2>Invite a Friend</h2>
+            <form id="referral-form">
+                <input type="email" id="referral-email" placeholder="Enter friend's email" required>
+                <button type="submit">Send Invitation</button>
+            </form>
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/referrals.js') }}"></script>
+</body>
+</html>
