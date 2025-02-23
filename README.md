@@ -2,7 +2,7 @@
 
 Video Demonstration
 
-[![Watch the video](https://drive.google.com/uc?id=14aS1tchu5qV17BkNudcNLdHpoQCwQ0FO)](https://www.canva.com/design/DAGS5sWWCY8/MlLKvJ0cTNV-RBUhXzOSoQ/watch)
+[![Watch the video](https://drive.google.com/uc?id=14aS1tchu5qV17BkNudcNLdHpoQCwQ0FO)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
 
 1. Unified Personalization Platform: Life360  
 Concept: AI-powered personalization platform for SBI Life, enhancing omnichannel engagement and real-time analytics.  
