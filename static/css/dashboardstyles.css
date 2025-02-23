@@ -1,0 +1,73 @@
+/* Apply gradient background to the entire app */
+div[data-testid="stAppViewContainer"] {
+    background: linear-gradient(90deg, #6d3cc5, #ff69b4);
+    color: white;
+}
+
+/* Sidebar Styles */
+div[data-testid="stSidebar"] {
+    background: rgba(255, 255, 255, 0.1);/* Dark contrast color */
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(167, 27, 27);
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4); /* Add shadow for better contrast */
+}
+
+/* Style the main content with increased width */
+div[data-testid="stVerticalBlock"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px; /* Increased padding */
+    margin: 10px; /* Increased margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+    width: 105%; /* Increased width to fit content properly */
+    max-width: 1200px; /* Prevents stretching on larger screens */
+    min-height: 550px; /* Increased height for better spacing */
+}
+
+/* Style Buttons */
+.stButton button {
+    background-color: #6d3cc5 !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.stButton button:hover {
+    background-color: #ff69b4 !important;
+}
+
+/* Tables and DataFrames */
+div[data-testid="stDataFrame"] {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+div[data-testid="stDataFrame"] th {
+    background-color: #6d3cc5;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+div[data-testid="stDataFrame"] td {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Charts and Graphs */
+div[data-testid="stPlotlyChart"] {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}

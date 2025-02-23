@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #6d3cc5, #ff69b4);
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Planner</h1>
+        
+        <h2>Transaction Categorization</h2>
+        <form action="/categorize" method="post">
+            <input type="text" name="transaction_note" placeholder="Transaction Description" required>
+            <input type="number" name="amount" placeholder="Amount" required>
+            <button type="submit">Categorize</button>
+        </form>
+        
+        <h2>Savings Roadmap</h2>
+        <form action="/savings_plan" method="post">
+            <input type="number" name="savings" placeholder="Current Savings" required>
+            <input type="number" name="goal" placeholder="Goal Amount" required>
+            <input type="number" name="duration" placeholder="Duration (months)" required>
+            <select name="risk_profile">
+                <option value="Low">Low Risk</option>
+                <option value="Medium">Medium Risk</option>
+                <option value="High">High Risk</option>
+            </select>
+            <button type="submit">Generate Roadmap</button>
+        </form>
+        
+        {% if result %}
+        <div class="result">
+            <h3>Result:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

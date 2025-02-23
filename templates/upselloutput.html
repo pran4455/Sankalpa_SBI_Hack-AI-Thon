@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Recommendations</title>
+    <link rel="stylesheet" type="text/css" href="/static/upsstyle.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Recommended Policies</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% else %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Confidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rec in recommendations %}
+                <tr>
+                    <td>
+                        <a href="{{ url_for('specific_policies', policy_id=rec.id) }}">
+                            {{ rec.recommendation }}
+                        </a>
+                    </td>
+                    <td>{{ rec.confidence }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

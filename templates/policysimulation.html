@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #6d3cc5, #ff69b4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        select {
+            background: #f4f4f4;
+        }
+        button {
+            background: #6d3cc5;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #5a2fa8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Policy Simulator</h1>
+        <label for="policy">Select a Policy:</label>
+        <select id="policy">
+            <option value="conservative">Conservative</option>
+            <option value="balanced">Balanced</option>
+            <option value="aggressive">Aggressive</option>
+        </select>
+        <h2>Savings: <span id="savings">$50000</span></h2>
+        <h2>Financial Health: <span id="health">70%</span></h2>
+        <h3>Apply Life Event:</h3>
+        <button onclick="applyEvent('marriage')">Marriage</button>
+        <button onclick="applyEvent('buyHouse')">Buy House</button>
+        <button onclick="applyEvent('jobPromotion')">Job Promotion</button>
+        <button onclick="applyEvent('stockInvestment')">Stock Investment</button>
+    </div>
+
+    <script>
+        let savings = 50000;
+        let financialHealth = 70;
+        const policies = {
+            conservative: { savingsGrowth: 2, riskFactor: 1 },
+            balanced: { savingsGrowth: 5, riskFactor: 3 },
+            aggressive: { savingsGrowth: 8, riskFactor: 5 }
+        };
+        const lifeEvents = {
+            marriage: { cost: -10000, impact: -2 },
+            buyHouse: { cost: -50000, impact: -5 },
+            jobPromotion: { cost: 5000, impact: 3 },
+            stockInvestment: { cost: -20000, impact: 7 }
+        };
+
+        function applyEvent(event) {
+            const policy = document.getElementById('policy').value;
+            if (!policy) return;
+            
+            const { cost, impact } = lifeEvents[event];
+            const { savingsGrowth, riskFactor } = policies[policy];
+            
+            const adjustedCost = cost + (riskFactor * 500);
+            const adjustedImpact = impact + (savingsGrowth / 2);
+
+            savings += adjustedCost;
+            financialHealth += adjustedImpact;
+
+            document.getElementById('savings').innerText = `$${savings}`;
+            document.getElementById('health').innerText = `${financialHealth}%`;
+        }
+    </script>
+</body>
+</html>
