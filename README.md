@@ -1,10 +1,10 @@
 #Sankalpa
 
-##Video Demonstration
+Video Demonstration
 
-[![Watch the video](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view?usp=sharing)]([https://www.canva.com/design/DAGS5sWWCY8/MlLKvJ0cTNV-RBUhXzOSoQ/watch](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view?usp=sharing))
+[![Watch the video](https://drive.google.com/uc?id=14aS1tchu5qV17BkNudcNLdHpoQCwQ0FO)](https://www.canva.com/design/DAGS5sWWCY8/MlLKvJ0cTNV-RBUhXzOSoQ/watch)
 
-##1. Unified Personalization Platform: Life360  
+1. Unified Personalization Platform: Life360  
 Concept: AI-powered personalization platform for SBI Life, enhancing omnichannel engagement and real-time analytics.  
 Key Features: 
 - Dynamic persona refinement through AI-driven clustering for real-time customer profiling.  
