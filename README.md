@@ -2,7 +2,7 @@
 
 ## Video Demonstration
 
-[![Watch the video](https://drive.google.com/uc?id=14aS1tchu5qV17BkNudcNLdHpoQCwQ0FO)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
+[![Watch the video](https://drive.google.com/file/d/1mDL9zIqaz_cP8BWf9_xOF8PJfwyGNVir/view)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
 
 # Description
 
@@ -36,7 +36,7 @@ Key Features:
 - AI-driven campaign optimization for improved ROI.  
 Impact: Enhances decision-making and boosts efficiency.  
 
-5. AI-Driven Marketing & Upselling: SmartEngage AI (Unified Solution: SmartMarketer AI + SellSmart)  
+## 5. AI-Driven Marketing & Upselling: SmartEngage AI (Unified Solution: SmartMarketer AI + SellSmart)  
 Concept: AI-driven marketing and upselling for revenue growth.  
 Key Features: 
 - Predictive remarketing to 
@@ -44,7 +44,7 @@ Key Features:
 - Interactive financial tools for goal tracking, policy simulations, and expense categorization.  
 Impact: Maximizes customer engagement, conversions, and satisfaction.  
 
-6. Data Quality & Ethical AI: TrustAI  
+## 6. Data Quality & Ethical AI: TrustAI  
 Concept: Ensuring reliable, ethical AI-driven decision-making.  
 Key Features: 
 - Data validation pipeline automating data cleansing and anomaly detection.  
@@ -52,7 +52,7 @@ Key Features:
 - Ethical AI toolkit with explainable AI (XAI) and privacy safeguards.  
 Impact: Increases trust, compliance, and AI performance.  
 
-7. Fraud Detection & Prevention  
+## 7. Fraud Detection & Prevention  
 Concept: AI-driven fraud detection for enhanced security.  
 Key Features:
 - Anomaly detection to identify suspicious claims and policy activities.  
