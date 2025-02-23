@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI-TalkSmart</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        /* Custom Floating Chat Button */
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(90deg, #8a2be2, #ff69b4);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .chat-button:hover {
+            background: linear-gradient(90deg, #6d3cc5, #ff4c8b);
+        }
+
+        /* Chat Icon */
+        .chat-button img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Language Selector */
+        .language-dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .language-dropdown img {
+            width: 20px;
+            height: 20px;
+        }
+
+        select {
+            border: none;
+            background: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hide Default Dialogflow Icon */
+        df-messenger::part(df-messenger-button) {
+            display: none !important;
+        }
+
+        /* Style Dialogflow Chatbox */
+        df-messenger {
+            --df-messenger-bot-message: #e1e1e1;
+            --df-messenger-user-message: #d0f0ff;
+            --df-messenger-chat-background: #ffffff;
+            --df-messenger-font-color: black;
+            --df-messenger-send-icon: #8a2be2;
+            --df-messenger-button-titlebar-color: #8a2be2;
+            --df-messenger-button-titlebar-font-color: white;
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+            max-width: 400px;
+            display: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to SBI-TalkSmart</h1>
+    <p>Click the chat icon to start a conversation.</p>
+
+    <!-- Language Selection Dropdown -->
+    <div class="language-dropdown">
+        <img src="https://cdn-icons-png.flaticon.com/512/484/484531.png" alt="Language Icon">
+        <select id="language-selector">
+            <option value="en" selected>English</option>
+            <option value="ta">தமிழ்</option>
+        </select>
+    </div>
+
+    <!-- Custom Floating Chat Button -->
+    <div class="chat-button" id="chat-btn">
+        <img src="https://sbilife-chatbot.allincall.in/files/f9443504-0ae6-4ba2-9d1e-075f9207927b_compressed.png" alt="Chat Icon">
+    </div>
+
+    <!-- Dialogflow Messenger -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    
+    <df-messenger
+        id="chatbot"
+        intent="WELCOME"
+        chat-title="Chat with TIA!"
+        agent-id="f1dd1169-3f26-46be-a02c-0a202af1d420"
+        language-code="en">
+    </df-messenger>
+
+    <script>
+        document.getElementById("chat-btn").addEventListener("click", function() {
+            var chatbox = document.querySelector("df-messenger");
+            chatbox.style.display = "block";
+
+            // Hide default floating icon every time chat is opened
+            setTimeout(() => {
+                document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-button").style.display = "none";
+            }, 500);
+        });
+
+        // Monitor for changes to keep the default icon hidden
+        const observer = new MutationObserver(() => {
+            let dfButton = document.querySelector("df-messenger").shadowRoot.querySelector("df-messenger-button");
+            if (dfButton) {
+                dfButton.style.display = "none";
+            }
+        });
+
+        observer.observe(document.querySelector("df-messenger"), { childList: true, subtree: true });
+
+        // Language Change Function
+        document.getElementById("language-selector").addEventListener("change", function() {
+            var selectedLang = this.value;
+            var chatbot = document.getElementById("chatbot");
+
+            // Define language-based chatbot titles
+            var chatTitle = selectedLang === "ta" ? "TIA உடன் அரட்டை!" : "Chat with TIA!";
+
+            // Remove the existing chatbot
+            chatbot.remove();
+
+            // Create a new chatbot with the selected language and title
+            var newChatbot = document.createElement("df-messenger");
+            newChatbot.setAttribute("id", "chatbot");
+            newChatbot.setAttribute("intent", "WELCOME");
+            newChatbot.setAttribute("chat-title", chatTitle);
+            newChatbot.setAttribute("agent-id", "f1dd1169-3f26-46be-a02c-0a202af1d420");
+            newChatbot.setAttribute("language-code", selectedLang);
+
+            document.body.appendChild(newChatbot);
+        });
+    </script>
+
+</body>
+</html>

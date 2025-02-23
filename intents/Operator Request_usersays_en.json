@@ -1,0 +1,210 @@
+[
+  {
+    "id": "a213cdb8-5c3d-4624-9133-c7b7fe8f7cad",
+    "data": [
+      {
+        "text": "stop",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "9d41e657-0cd7-46bb-a0e8-68ee99233dca",
+    "data": [
+      {
+        "text": "I\u0027m stuck",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "e89e49ea-17e0-43b7-b59b-ba211499d2cd",
+    "data": [
+      {
+        "text": "this isn\u0027t working",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "bb85c9dd-d376-4f7e-80de-ecaef132f88f",
+    "data": [
+      {
+        "text": "let me talk to a live person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "139bcd5d-b61d-4036-a451-062810297fc5",
+    "data": [
+      {
+        "text": "let me talk to a representative",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3ccbed58-e7c4-46ad-b219-cad71949260b",
+    "data": [
+      {
+        "text": "let me talk to a person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "a1fb96a8-8d97-43f6-98c3-58eba0b85754",
+    "data": [
+      {
+        "text": "I need help",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cdd47378-bf3a-461d-8422-2ae6d79f077b",
+    "data": [
+      {
+        "text": "help",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "051289fd-efcd-4429-b1e2-6976324ca124",
+    "data": [
+      {
+        "text": "chat with a human",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "5ef810cc-8863-477b-8429-a249f4abbb6a",
+    "data": [
+      {
+        "text": "speak with a real person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "3fc9eab7-b1c0-48d0-a7d9-d4a846e400f3",
+    "data": [
+      {
+        "text": "talk to a real person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ef9fc050-99cc-4c6b-962e-30c9a93557ca",
+    "data": [
+      {
+        "text": "talk to an operator",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "f4f468d4-5da5-43f1-8e8a-fcb490e40c3f",
+    "data": [
+      {
+        "text": "talk to the operator",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "cf745476-9780-409d-84fa-12034f8ab952",
+    "data": [
+      {
+        "text": "talk to a human",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "ba3a4f2b-8ecb-4762-96da-e7147b4a549a",
+    "data": [
+      {
+        "text": "talk to a person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  },
+  {
+    "id": "4b77ba6d-0051-4a40-87da-08d3252e73ea",
+    "data": [
+      {
+        "text": "I want to talk to a person",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "en",
+    "updated": 0
+  }
+]

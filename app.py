@@ -5,7 +5,6 @@ import joblib
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from flask import Flask, render_template, request, jsonify
 import model  # Importing the ML model logic
-import joblib
 
 app = Flask(__name__)
 

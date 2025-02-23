@@ -1,0 +1,35 @@
+{
+  "id": "33d5acbc-2ef5-40e7-bfbd-862a4873ab01",
+  "name": "basics-sbi-2",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "இணைப்பைக் கிளிக் செய்து, எளிய படிகளில் மாற்றத்தை முடிக்கவும்\n\nhttps://smartcare.sbilife.co.in/smartcare/#/pre/pay-renewal\n\nsbi life webportal இலிருந்து\n\nஎங்கள் இணையதளத்தின் சேவைகள் பிரிவில் உள்ள பிரீமியம் கட்டண இணைப்பைப் பார்வையிடவும்\n\nபிரீமியம் இணைப்பு இணைப்பு\n\nhttps://smartcare.sbilife.co.in/smartcare/#/pre/pay-renewal"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

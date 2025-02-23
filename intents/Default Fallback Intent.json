@@ -1,0 +1,50 @@
+{
+  "id": "8e1811cf-dc5d-4c2a-bd42-c6becb3808f2",
+  "name": "Default Fallback Intent",
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [
+        {
+          "name": "DefaultFallbackIntent-followup",
+          "lifespan": 1,
+          "parameters": {}
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "எஸ்பிஐ லைஃப் தயாரிப்புகள் மற்றும் சேவைகளைப் பற்றி நீங்கள் என்னிடம் கேட்கலாம் அல்லது ஒரு நபருடன் பேசக் கோரலாம். இன்று நான் உங்களுக்கு எப்படி உதவ முடியும்?"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "You can ask me about SBI Life products and services or request to speak with a person. How can I assist you today?"
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

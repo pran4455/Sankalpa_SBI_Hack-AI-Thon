@@ -1,0 +1,193 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chat-container {
+            width: 400px;
+            height: 600px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-header {
+            background: linear-gradient(90deg, #6d3cc5, #ff69b4);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            background: #f4f4f4;
+        }
+
+        .chat-message {
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        /* Customer messages aligned to the right */
+        .customer-message {
+            align-self: flex-end;
+            background: #d0f0ff;
+            color: blue;
+            text-align: right;
+        }
+
+        /* Agent messages (including welcome message) aligned to the left */
+        .agent-message {
+            align-self: flex-start;
+            background: #e1e1e1;
+            color: black;
+            text-align: left;
+        }
+
+        .customer-error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .chat-footer {
+            padding: 15px;
+            border-top: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            background: white;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #8a2be2;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+            text-indent: 10px;
+            box-shadow: 0px 0px 8px rgba(138, 43, 226, 0.8);
+        }
+
+        .chat-input:focus {
+            border-color: #ff69b4;
+            box-shadow: 0px 0px 12px rgba(255, 105, 180, 0.8);
+        }
+
+        .send-button {
+            background: linear-gradient(90deg, #8a2be2, #ff69b4);
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            margin-left: 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .send-button:hover {
+            background: linear-gradient(90deg, #6d3cc5, #ff4c8b);
+        }
+
+        #messages {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            Chat with TIA!
+        </div>
+        <div class="chat-body">
+            <ul id="messages"></ul>
+        </div>
+        <div class="chat-footer">
+            <input id="m" type="text" class="chat-input" placeholder="Type here...">
+            <button class="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var socket = io('/customer');
+
+            // Function to send message
+            function sendMessage() {
+                var messageText = $('#m').val().trim();
+                if (messageText !== "") {
+                    $('#messages').append($('<li class="chat-message customer-message">').text(messageText));
+                    socket.emit('customer message', messageText);
+                    $('#m').val('');
+                }
+            }
+
+            // Send message on button click
+            $('.send-button').click(function(){
+                sendMessage();
+            });
+
+            // Send message on Enter key press
+            $('#m').keypress(function(event) {
+                if (event.which === 13) { // 13 is Enter key code
+                    event.preventDefault(); // Prevent new line in input
+                    sendMessage();
+                }
+            });
+
+            // Receive and display messages (including agent responses)
+            socket.on('customer message', function(msg){
+                $('#messages').append($('<li class="chat-message agent-message">').text(msg));
+            });
+
+            // Handle system errors
+            socket.on('system error', function(error) {
+                var errorText = error.type + ' - ' + error.message;
+                console.log(errorText);
+                $('#messages').append($('<li class="customer-error">').text(errorText));
+            });
+        });
+    </script>
+
+</body>
+</html>
+

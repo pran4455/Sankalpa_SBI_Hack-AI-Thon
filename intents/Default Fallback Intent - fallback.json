@@ -1,0 +1,54 @@
+{
+  "id": "a9c476bc-ff10-4f01-81a0-a0e519483f42",
+  "parentId": "8e1811cf-dc5d-4c2a-bd42-c6becb3808f2",
+  "rootParentId": "8e1811cf-dc5d-4c2a-bd42-c6becb3808f2",
+  "name": "Default Fallback Intent - fallback",
+  "contexts": [
+    "DefaultFallbackIntent-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "DefaultFallbackIntent.DefaultFallbackIntent-fallback",
+      "affectedContexts": [
+        {
+          "name": "OPERATOR_REQUEST",
+          "lifespan": 1,
+          "parameters": {}
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "நான் அதற்கு உதவ முடியும் என்று எனக்குத் தெரியவில்லை. நான் உங்களை வாடிக்கையாளர் சேவை முகவருடன் இணைக்கிறேன்."
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "I\u0027m not sure I can help with that. I\u0027m connecting you with a customer service agent."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

@@ -1,0 +1,218 @@
+<!doctype html>
+<!doctype html>
+<html>
+  <head>
+    <title>Operator Interface</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 14px Arial, sans-serif; background: white; color: black; }
+      
+      /* Header Gradient */
+      h1 { 
+        text-align: center; 
+        padding: 15px; 
+        background: linear-gradient(90deg,#6d3cc5, #ff69b4); 
+        color: white; 
+        
+      }
+
+      /* Chat form */
+      form { 
+        background: rgba(255, 255, 255, 0.9); 
+        padding: 5px; 
+        position: fixed; 
+        bottom: 0; 
+        width: 100%; 
+        display: flex; 
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.3); 
+      }
+
+      /* Input field with LED glow effect */
+      .chat-input { 
+        flex: 0.8; 
+        padding: 12px; 
+        border: 2px solid #8a2be2; 
+        border-radius: 20px; 
+        outline: none; 
+        font-size: 16px; 
+        transition: 0.3s; 
+        text-indent: 10px; 
+        box-shadow: 0px 0px 8px rgba(138, 43, 226, 0.8); /* LED glow effect */
+      }
+
+      .chat-input:focus { 
+        border-color: #ff69b4; 
+        box-shadow: 0px 0px 12px rgba(255, 105, 180, 0.8); /* Stronger glow on focus */
+      }
+
+      /* Send button with Gradient */
+      form button { 
+        flex: 0.2;
+        background: linear-gradient(90deg, #8a2be2, #ff69b4); 
+        border: none; 
+        color: white; 
+        padding: 10px 18px; 
+        border-radius: 20px; 
+        cursor: pointer; 
+        text-shadow: 0 0 5px rgba(255,255,255,0.7); 
+        transition: 0.3s;
+      }
+      form button:hover { background: linear-gradient(90deg,#6d3cc5, #ff4c8b); }
+
+      /* Chat Tabs */
+      #chatTabs { 
+        list-style-type: none; 
+        display: flex; 
+        padding: 10px; 
+        background: rgba(255,255,255,0.9); 
+        border-bottom: 2px solid #ddd; 
+      }
+
+      #chatTabs li.chat-tab { 
+        padding: 8px 12px; 
+        border-radius: 5px 5px 0 0; 
+        cursor: pointer; 
+        margin-right: 5px; 
+        background: #444; 
+        color: white; 
+      }
+
+      #chatTabs li.chat-tab.selected { 
+        font-weight: bold; 
+        color: white; 
+        background: #8a2be2; 
+        box-shadow: 0 0 10px rgba(255,20,147,0.8); 
+      }
+
+      #chatWindows { 
+        padding: 15px; 
+        height: calc(100vh - 150px); 
+        overflow-y: auto; 
+        background: rgba(255,255,255,0.9); 
+        border-radius: 10px; 
+      }
+
+      /* Chat Window Styling */
+      ul.chat-window { list-style-type: none; }
+
+      ul.chat-window li { 
+        padding: 8px 12px; 
+        margin-bottom: 5px; 
+        border-radius: 5px; 
+      }
+
+      ul.chat-window li.operator-message { 
+        background: #d0f0ff;
+        color: blue; 
+        align-self: flex-end; 
+         
+      }
+
+      ul.chat-window li.operator-error { 
+        color: white; 
+        background: rgb(254, 97, 97); 
+        
+      }
+
+      ul.chat-window li.customer-message { 
+        background: #d0f0ff;
+        color: blue;
+      }
+
+      ul.chat-window li.agent-response { 
+        font-style: italic; 
+        background: #ffeb99; 
+        color: black; 
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Operator</h1>
+    <ul id="chatTabs"></ul>
+    <div id="chatWindows"></div>
+    <form>
+      <input id="m" class="chat-input" autocomplete="off" placeholder="Type a message..." />
+      <button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var socket = io('/operator');
+        var connectedCustomers = {};
+        var currentTab;
+        var messageObject = function(customerId, utterance) {
+          return { customerId: customerId, utterance: utterance };
+        };
+        
+        $('form').submit(function(){
+          if(currentTab && currentTab.disconnected) {
+            alert('This customer has disconnected');
+            return false;
+          }
+          var messageText = $('#m').val();
+          socket.emit('operator message', messageObject(currentTab.customerId, messageText));
+          $('#m').val('');
+          return false;
+        });
+
+        var setCurrentTab = function(target) {
+            if(currentTab === target) return;
+            currentTab = target;
+            $('li.chat-tab').removeClass('selected');
+            target.tab.addClass('selected');
+            $('.chat-window').hide();
+            target.window.show();
+        };
+
+        var createNewCustomerTab = function(customerId) {
+          var newChatElements = { customerId: customerId };
+          newChatElements.tab = $('<li class="chat-tab">').text(customerId).click(function() { setCurrentTab(newChatElements); });
+          newChatElements.window = $('<ul class="chat-window">').hide();
+          connectedCustomers[customerId] = newChatElements;
+          if(!currentTab) setCurrentTab(newChatElements);
+          $('#chatTabs').append(newChatElements.tab);
+          $('#chatWindows').append(newChatElements.window);
+        };
+
+        var notifyOperatorRequest = function(customerId) {
+          if(connectedCustomers[customerId]) {
+            setCurrentTab(connectedCustomers[customerId]);
+            alert('Operator requested!');
+          }
+        };
+
+        var notifyCustomerDisconnected = function(customerId) {
+          if(connectedCustomers[customerId]) {
+            connectedCustomers[customerId].disconnected = true;
+            connectedCustomers[customerId].window.append($('<li class="customer-message">').text('--- Customer disconnected ---'));
+          }
+        };
+
+        var notifySystemError = function(error) {
+          var errorText = (error.type === 'CustomerModeError') ? error.message : error.type + ' - ' + error.message;
+          if(currentTab) currentTab.window.append($('<li class="operator-error">').text(errorText));
+        };
+
+        var receivedOperatorMessage = function(msg) {
+          var customer = connectedCustomers[msg.customerId];
+          if(customer) customer.window.append($('<li class="operator-message">').text(msg.utterance));
+        };
+
+        var receivedCustomerMessage = function(msg) {
+          if(connectedCustomers[msg.customerId]) {
+            var prefix = msg.isAgentResponse ? 'Agent: ' : 'Customer: ';
+            connectedCustomers[msg.customerId].window.append($('<li class="customer-message">').toggleClass('agent-response', msg.isAgentResponse).text(prefix + msg.utterance));
+          }
+        };
+
+        socket.on('customer connected', createNewCustomerTab);
+        socket.on('customer message', receivedCustomerMessage);
+        socket.on('operator requested', notifyOperatorRequest);
+        socket.on('operator message', receivedOperatorMessage);
+        socket.on('customer disconnected', notifyCustomerDisconnected);
+        socket.on('system error', notifySystemError);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "id": "f790077b-44e0-44ff-a7de-2cf41c667091",
+  "name": "Operator Request",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [
+        {
+          "name": "OPERATOR_REQUEST",
+          "lifespan": 1,
+          "parameters": {}
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "பிரச்சனை இல்லை! நான் உங்களை ஒரு லைவ் ஆபரேட்டரிடம் ஒப்படைக்கப் போகிறேன். ஒரே ஒரு கணம்.."
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "No problem! I\u0027ll hand you over to a live operator. Just one moment...",
+            "No worries! I\u0027ll connect you with a live operator. One moment..."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

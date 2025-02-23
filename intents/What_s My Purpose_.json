@@ -1,0 +1,45 @@
+{
+  "id": "2fc66300-64fe-4e5b-a686-83b7747241ea",
+  "name": "What\u0027s My Purpose?",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "வாழ்த்துக்கள்! நான் TIA (ஸ்மார்ட் ஊடாடும் உதவியாளர்)\n\nஎஸ்பிஐ லைஃப் தயாரிப்புகள் மற்றும் சேவைகள் தொடர்பான உங்கள் கேள்விகளுக்கு , மனித உணர்வுடன் தனிப்பயனாக்கப்பட்ட ஆதரவை உதவ நான் இங்கு இருக்கிறேன்.\n\nஉங்கள் வினவலை நீங்கள் தேர்வு செய்யலாம் அல்லது தட்டச்சு செய்யலாம்"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Greetings! I\u0027m TIA (TalkSmart Interactive Assistant).\nI am here to help you with your queries related to SBI Life products and services, providing personalized support with a touch of human care."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

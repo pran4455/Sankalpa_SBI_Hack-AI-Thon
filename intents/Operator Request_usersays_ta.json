@@ -1,0 +1,80 @@
+[
+  {
+    "id": "2380b79c-9614-4340-b91c-d3e52224d2e6",
+    "data": [
+      {
+        "text": "இது வேலை செய்யவில்லை.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  },
+  {
+    "id": "fd31a2b9-19ce-4ad0-8f6c-d32061a7644d",
+    "data": [
+      {
+        "text": "நான் மாட்டிக்கொண்டேன்.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  },
+  {
+    "id": "86f037f3-de6d-441a-a735-d41f9187ac82",
+    "data": [
+      {
+        "text": "ஒரு மனிதனுடன் அரட்டை.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  },
+  {
+    "id": "0dc059a7-f46c-4014-bd51-d2f98c24a8e1",
+    "data": [
+      {
+        "text": "என்னை ஒரு நபரிடம் பேச விடுங்கள்.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  },
+  {
+    "id": "47ab19d2-bff6-4608-af18-5026ac603c4b",
+    "data": [
+      {
+        "text": "நிறுத்து",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  },
+  {
+    "id": "92d080ac-77df-4dc7-b24b-23c3ea2ad2f2",
+    "data": [
+      {
+        "text": "உதவி",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "lang": "ta",
+    "updated": 0
+  }
+]

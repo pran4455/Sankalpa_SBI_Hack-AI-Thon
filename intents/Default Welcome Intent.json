@@ -1,0 +1,49 @@
+{
+  "id": "baf8b7e9-0e67-4fb8-a9c7-7abd90e72a5b",
+  "name": "Default Welcome Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "ta",
+          "speech": [
+            "வாழ்த்துக்கள்! நான் TIA (ஸ்மார்ட் ஊடாடும் உதவியாளர்)\n\nஎஸ்பிஐ லைஃப் தயாரிப்புகள் மற்றும் சேவைகள் தொடர்பான உங்கள் கேள்விகளுக்கு , மனித உணர்வுடன் தனிப்பயனாக்கப்பட்ட ஆதரவை உதவ நான் இங்கு இருக்கிறேன்.\n\nஉங்கள் வினவலை நீங்கள் தேர்வு செய்யலாம் அல்லது தட்டச்சு செய்யலாம்"
+          ],
+          "condition": ""
+        },
+        {
+          "type": "0",
+          "title": "",
+          "textToSpeech": "",
+          "lang": "en",
+          "speech": [
+            "Greetings! I\u0027m TIA (TalkSmart Interactive Assistant).\n\nI am here to help you with your queries related to SBI Life products and services, providing personalized support with a touch of human care."
+          ],
+          "condition": ""
+        }
+      ],
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "WELCOME"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

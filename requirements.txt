@@ -1,2 +1,14 @@
 flask
 gunicorn
+pandas
+numpy
+joblib
+sklearn
+plotly
+seaborn
+altair
+matplotlib
+streamlit
+ctransformers
+chainlit
+torch
