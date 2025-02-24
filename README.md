@@ -21,12 +21,16 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 # Core Modules
 
 🚀 1. Unified Personalization Platform: Life360
+
 🔍 Concept: AI-powered personalization platform transforming SBI Life into a real-time financial advisor.
+
 📌 Why it matters? Customers demand hyper-personalized experiences across all touchpoints.
 
 🔑 Key Features:
 ✅ AI-Driven Persona Refinement – Real-time customer profiling with dynamic clustering.
+
 ✅ Omnichannel Personalization – Seamless customer journeys across mobile, web, email & branches.
+
 ✅ Smart Policy Recommendations – AI adapts to life stages, guiding users to the right policies.
 
 🎯 Impact: Boosts customer loyalty & engagement by making SBI Life a proactive advisor, not just an insurer.
