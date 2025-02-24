@@ -156,3 +156,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 - ![SVC](https://img.shields.io/badge/SVM-00758F?style=for-the-badge&logo=scikitlearn&logoColor=white)  
 - ![LLM](https://img.shields.io/badge/LLM-764ABC?style=for-the-badge&logo=openai&logoColor=white)  
 
+
+## Architecture Diagram
+
+![Screenshot (18)](https://github.com/user-attachments/assets/82546096-8148-42f0-90fc-5dab34691ecf)
