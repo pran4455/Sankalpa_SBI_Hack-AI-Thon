@@ -159,4 +159,4 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 
 ## Architecture Diagram
 
-![Screenshot (18)](https://github.com/user-attachments/assets/82546096-8148-42f0-90fc-5dab34691ecf)
+![Screenshot (18)](https://github.com/user-attachments/assets/c2ef97fe-b6b7-43a9-98fa-8e2ab8ca41ab)
