@@ -61,24 +61,26 @@ Key Features:
 Impact: Reduces fraudulent claims, improves risk management, and enhances policyholder trust.
 
 
-## Built With
-## Built With  
+## Built With 
 
-This section lists the major frameworks, libraries, and tools used to develop this project.  
+## Core Tech Stack:
 
 - ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)  
 - ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)  
 - ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)  
-- ![RandomForestClassifier](https://img.shields.io/badge/RandomForest-008000?style=for-the-badge&logo=scikitlearn&logoColor=white)  
-- ![XGBoost](https://img.shields.io/badge/XGBoost-EC4E23?style=for-the-badge&logo=xgboost&logoColor=white)  
-- ![SVC](https://img.shields.io/badge/SVM-00758F?style=for-the-badge&logo=scikitlearn&logoColor=white)  
 - ![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)  
 - ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)  
 - ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)  
 - ![Socket.IO](https://img.shields.io/badge/Socket.IO-010101?style=for-the-badge&logo=socket.io&logoColor=white)  
 - ![Dialogflow](https://img.shields.io/badge/Dialogflow-FF9800?style=for-the-badge&logo=dialogflow&logoColor=white)  
-- ![LLM](https://img.shields.io/badge/LLM-764ABC?style=for-the-badge&logo=openai&logoColor=white)  
 - ![Chainlit](https://img.shields.io/badge/Chainlit-555555?style=for-the-badge&logo=chatbot&logoColor=white)  
 - ![JQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)  
 
+
+ ## Machine Learning & AI Models:
+
+- ![RandomForestClassifier](https://img.shields.io/badge/RandomForest-008000?style=for-the-badge&logo=scikitlearn&logoColor=white)  
+- ![XGBoost](https://img.shields.io/badge/XGBoost-EC4E23?style=for-the-badge&logo=xgboost&logoColor=white)  
+- ![SVC](https://img.shields.io/badge/SVM-00758F?style=for-the-badge&logo=scikitlearn&logoColor=white)  
+- ![LLM](https://img.shields.io/badge/LLM-764ABC?style=for-the-badge&logo=openai&logoColor=white)  
 
