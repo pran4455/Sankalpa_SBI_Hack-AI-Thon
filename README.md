@@ -173,3 +173,14 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 
 - **🎯 Personalization Impact:** Insurers using AI for personalized offerings see a **5-10%** rise in conversion rates.  
 
+
+# 🚀 The Future of AI-Driven Personalization
+
+Sankalpa isn’t just an AI-powered personalization engine—it’s a paradigm shift in how SBI Life interacts with its customers. By delivering real-time, hyper-personalized experiences, we’re transforming insurance from a transactional service into a trusted financial partner.
+
+🔹 Smarter Engagement. More relevance, less churn.
+
+🔹 Stronger Loyalty. AI-driven insights that keep customers invested.
+
+🔹 Sustained Growth. Revenue-boosting personalization at scale.
+
