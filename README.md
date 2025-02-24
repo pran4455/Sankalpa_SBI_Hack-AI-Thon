@@ -28,6 +28,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Customers demand hyper-personalized experiences across all touchpoints.
 
 🔑 Key Features:
+
 ✅ AI-Driven Persona Refinement – Real-time customer profiling with dynamic clustering.
 
 ✅ Omnichannel Personalization – Seamless customer journeys across mobile, web, email & branches.
@@ -43,6 +44,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? 76% of customers leave due to poor communication.
 
 🔑 Key Features:
+
 ✅ Emotion-Driven Outreach – AI analyzes past interactions for personalized messaging.
 
 ✅ Proactive Nudges – Predicts drop-offs and automates friendly reminders.
@@ -60,6 +62,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Traditional rewards feel impersonal. This system ties incentives to real-life behavior.
 
 🔑 Key Features:
+
 ✅ Wellness Rewards – Discounts & cashback for healthy lifestyles.
 
 ✅ Life Event Milestones – AI-driven rewards for key personal & financial achievements.
@@ -75,6 +78,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Data-driven decision-making unlocks hidden revenue & engagement opportunities.
 
 🔑 Key Features:
+
 ✅ Churn Prediction – AI forecasts potential exits before they happen.
 
 ✅ AI-Optimized Campaigns – Improves targeting & customer engagement.
@@ -88,6 +92,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Traditional sales approaches feel generic—customers expect relevance.
 
 🔑 Key Features:
+
 ✅ Predictive Remarketing – AI predicts the best time to reach out to customers.
 
 ✅ Emotion-Aware Upselling – Sentiment analysis personalizes recommendations.
@@ -103,6 +108,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Trust in AI is critical for financial decision-making.
 
 🔑 Key Features:
+
 ✅ Automated Data Validation – AI detects errors & anomalies in customer data.
 
 ✅ GAN-Based Synthetic Data – Privacy-first AI training without real user data.
@@ -118,6 +124,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 📌 Why it matters? Fraudulent claims cost the industry billions annually.
 
 🔑 Key Features:
+
 ✅ Behavioral AI – Analyzes user activity for fraud risk signals.
 
 ✅ Real-Time Anomaly Detection – Flags suspicious transactions & activities.
