@@ -157,6 +157,19 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 - ![LLM](https://img.shields.io/badge/LLM-764ABC?style=for-the-badge&logo=openai&logoColor=white)  
 
 
-## Architecture Diagram
+# Architecture Diagram
 
 ![Screenshot (18)](https://github.com/user-attachments/assets/c2ef97fe-b6b7-43a9-98fa-8e2ab8ca41ab)
+
+# 📊 Impact of AI-Driven Personalization
+
+- **🔻 Churn Reduction:** AI-driven engagement can decrease client attrition by **25%**.  
+
+- **📈 Improved Conversions:** AI-powered bots boost conversion rates, with **50%+** of respondents reporting at least a **10%** increase.  
+
+- **💰 Revenue Growth:** AI-driven cross-sell strategies help financial institutions achieve an **average 15%** revenue increase per customer.
+  
+- **😊 Customer Satisfaction:** Retail banking satisfaction increases by **163 points** (on a 1,000-point scale) when customers act on AI-driven advice.  
+
+- **🎯 Personalization Impact:** Insurers using AI for personalized offerings see a **5-10%** rise in conversion rates.  
+
