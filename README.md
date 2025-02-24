@@ -17,7 +17,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 
 ## Video Demonstration
 
-[![Watch the video](https://images.squarespace-cdn.com/content/v1/5dc36d89693877010cf639bc/1576368485444-8C28J2IJ37VIVUC7HB7P/8364741_orig-1024x437.jpg?format=2500w)](https://drive.google.com/file/d/1nRnh2-83qcMPBbR5fdHqrxTr9dBHS2TP/view)
+[![Watch the video](https://images.squarespace-cdn.com/content/v1/5dc36d89693877010cf639bc/1576368485444-8C28J2IJ37VIVUC7HB7P/8364741_orig-1024x437.jpg?format=2500w)](https://drive.google.com/drive/folders/1yowEzWZsmZibCp0MVt3PKyz0QcYGjM7R)
 
 # Core Modules
 
