@@ -4,9 +4,13 @@ SBI Life’s persona-based approach limits deep personalization, reducing engage
 
 Our Vision
 🚀 Deep Individual Insights – Real-time AI-driven clustering for personalized experiences.
+
 📈 Smart Upselling – Tailored policy recommendations based on life stages.
+
 💡 Enhanced Retention – Sentiment-aware outreach and proactive engagement.
+
 🔒 Trust & Compliance – Ethical AI ensuring transparency, security, and fairness.
+
 
 By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer satisfaction, strengthen loyalty, and drive revenue growth—empowering smarter, more meaningful financial decisions. 🚀
 
@@ -93,7 +97,7 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 
 🎯 Impact: Minimizes fraud losses, enhances security, and builds customer trust.
 
-## Built With 
+# Built With 
 
 ## Core Tech Stack:
 
