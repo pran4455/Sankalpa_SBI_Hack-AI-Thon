@@ -117,22 +117,6 @@ By seamlessly integrating AI into SBI Life’s ecosystem, we boost customer sati
 
 🎯 **Impact:** Ensures fairness, regulatory compliance, and robust AI performance.
 
-## 7. Fraud Detection & Prevention
-
-🔍 **Concept:** AI-powered fraud detection securing transactions & policy management.
-
-📌 **Why it matters?** Fraudulent claims cost the industry billions annually.
-
-🔑 **Key Features:**
-
-✅ Behavioral AI – Analyzes user activity for fraud risk signals.
-
-✅ Real-Time Anomaly Detection – Flags suspicious transactions & activities.
-
-✅ AI-Powered Investigations – Automated fraud detection & response workflows.
-
-🎯 **Impact:** Minimizes fraud losses, enhances security, and builds customer trust.
-
 # Built With 
 
 ## Core Tech Stack:
